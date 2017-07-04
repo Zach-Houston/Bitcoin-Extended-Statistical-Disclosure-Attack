@@ -12,7 +12,8 @@ Our goal is to perform a statistical disclosure attack on all the public nodes i
 Our goal is to perform a statistical disclosure attack on all the private nodes in the network.  These nodes aren't able to be directly connected to, so we can't simply listen to them to determine who is talking.  Instead, we first create a list of private nodes and their corresponding public nodes.  This allows us to listen to them by observing what combination of public nodes is first propogating a message by comparing the speaking nodes to the ones in the list of private-to-public nodes.  This gives us our rounds data.
 
 # Network Specifications
-Basics
+___Basics___
+
 • All Strings are transmitted using UTF-8. 
 
 • All IDs (node and message) are transmitted as 64 character long strings representing hex strings. 
@@ -26,8 +27,10 @@ Basics
 • All commands will start with a command string followed by the newline character, followed by the command appropriate data.
 
 
-Command Messages
-PEERS
+___Command Messages___
+
+__PEERS__
+
 • Nodes will respond by returning a random list of 20 peers that this node is currently connected to, either via incoming or outgoing 
 connections. 
 
@@ -35,27 +38,27 @@ connections.
 
 • Peers are returned in the form <Peer ID Value>@<IP Address>:<TCP Port>, where all information is the string representation of the appropriate data.
 
-OFFER
+__OFFER__
 
 • Nodes will, upon cryptographic veriﬁcation of a message they are originating or received via PULL, send this message to all connected peers informing them that they have the ability to transmit the message. 
 
 • The peer will follow the command word with the message’s ID, followed by the newline character.
 
-PULL
+__PULL__
 
 • This command allows a node to request message data matching a particular ID in response to an OFFER message. 
 
 • Nodes will follow this command with the message ID, followed by a newline. 
-_
+
 • A DATA command should follow a successfully completed PULL command.
 
-DATA
+__DATA__
 
 • This command proceed the transmission of data in response to a pull request. 
 
 • Nodes will follow this command with the message ID, followed by a newline, followed by the message itself, followed by a newline.
 
-ACK
+__ACK__
 
 • Nodes will, upon cryptographic ﬁrst veriﬁcation of an acknowledgment for a particular message, send this message to all peers. 
 
