@@ -10,11 +10,9 @@ public class Listener implements Runnable{
 
 	public void run(){
 		try{
-//			System.out.printf("%s%n", id);
 			BufferedReader reader = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 			String userInput = new String();
 			while( (userInput = reader.readLine()) != null ){
-//				System.out.println(userInput);
 				if(userInput.equals("OFFER")){
 					Timestamp t = new Timestamp(System.currentTimeMillis());
 					String msg = reader.readLine();
@@ -27,8 +25,6 @@ public class Listener implements Runnable{
 				if(userInput.equals("ACK")){
 					Timestamp t = new Timestamp(System.currentTimeMillis());
 					String msg = reader.readLine();
-			//		if(man.ack.size() == 16){ continue; }
-//					System.out.println(msg);
 					man.addAck(t, new Message(id, p, msg));
 				}
 			}
