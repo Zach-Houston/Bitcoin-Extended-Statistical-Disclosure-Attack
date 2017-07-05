@@ -1,6 +1,8 @@
 # Bitcoin-Statistical-Disclosure-Attack
 This project was designed to be used on a network similar to Bitcoin.  It was a project for my Network Security class.
 
+https://books.google.com/books?id=Sd3zBwAAQBAJ&pg=PA17&lpg=PA17&dq=practical+traffic+analysis:+extending+and+resisting+statistical+disclosure&source=bl&ots=CTV1hNzCdY&sig=pwbckkDxKFVm1ob6lShUg6bK-a8&hl=en&sa=X&ved=0ahUKEwja_oDKjPPUAhXKZiYKHQOjBSYQ6AEISjAG#v=onepage&q=practical%20traffic%20analysis%3A%20extending%20and%20resisting%20statistical%20disclosure&f=false
+
 ## Part 1
 Part 1 simply involved performing a statistical disclosure attack on a given set of rounds data.
 
